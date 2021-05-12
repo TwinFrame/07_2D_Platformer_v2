@@ -12,9 +12,9 @@ public class RoboCollectingCoins : MonoBehaviour
 		{
 			_coin = coinTrigger.GetComponentInParent<Coin>();
 
-			GetComponent<Robo>().AddCoin(_coin.GetCoinNominalValue());
+			GetComponent<Robo>().AddCoin(_coin.nominalValue);
 
-			GetComponent<AudioSource>().PlayOneShot(_coin.GetCollectedSound());
+			GetComponent<AudioSource>().PlayOneShot(_coin.collectedSound);
 
 			Destroy(_coin.gameObject);
 		}

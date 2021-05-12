@@ -14,19 +14,25 @@ public class Coin : MonoBehaviour
 
 	private Coroutine _defaultRotationJob;
 
+	public int nominalValue
+	{
+		get
+		{
+			return _nominalValue;
+		}
+	}
+
+	public AudioClip collectedSound
+	{
+		get
+		{
+			return _collectedSound;
+		}
+	}
+
 	private void OnEnable()
 	{
 		_defaultRotationJob = StartCoroutine(DefaultRotation());
-	}
-
-	public int GetCoinNominalValue()
-	{
-		return _nominalValue;
-	}
-
-	public AudioClip GetCollectedSound()
-	{
-		return _collectedSound;
 	}
 
 	private IEnumerator DefaultRotation()

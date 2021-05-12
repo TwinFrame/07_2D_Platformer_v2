@@ -11,7 +11,7 @@ public class RoboTakeDamage : MonoBehaviour
 	{
 		if (collision.gameObject.TryGetComponent<Enemy>(out Enemy enemy))
 		{
-			_takeDamage.Invoke(enemy.GetDamage());
+			_takeDamage.Invoke(enemy.damage);
 		}
 	}
 }

@@ -56,6 +56,7 @@ public class RoboInput : MonoBehaviour
 		while (_runningTime <= _timeToRunning)
 		{
 			_runningTime += Time.deltaTime;
+
 			yield return null;
 		}
 

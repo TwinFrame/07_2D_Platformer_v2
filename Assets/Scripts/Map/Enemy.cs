@@ -8,8 +8,11 @@ public class Enemy : MonoBehaviour
 {
 	[SerializeField] private int _damage;
 
-	public int GetDamage()
+	public int damage
 	{
-		return _damage;
+		get
+		{
+			return _damage;
+		}
 	}
 }

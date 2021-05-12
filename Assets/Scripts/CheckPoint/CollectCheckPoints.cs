@@ -25,7 +25,7 @@ public class CollectCheckPoints : MonoBehaviour
 	{
 		foreach (var flag in _checkPointFlags)
 		{
-			if (!flag.GetIsReached())
+			if (!flag.isReached)
 			{
 				return false;
 			}

@@ -12,15 +12,15 @@ public class Robo : MonoBehaviour
 	[SerializeField] private int _fullHealth;
 	[SerializeField] private UnityEvent _deathEvent;
 
+	private Vector3 respawnPosition;
 	private int _health;
-	private Vector3 _respawnPosition;
 	private int _wallet;
 
 	private void OnEnable()
 	{
 		_health = _fullHealth;
 
-		_respawnPosition = transform.localPosition;
+		respawnPosition = transform.localPosition;
 	}
 
 	public void AddCoin(int value)
@@ -38,9 +38,9 @@ public class Robo : MonoBehaviour
 		{
 			_health = _fullHealth;
 
-			transform.localPosition = _respawnPosition;
+			transform.localPosition = respawnPosition;
 
-			_deathEvent.Invoke();
+			RespawnPlayerAfterDeath();
 
 			Debug.Log("Вы проиграли.");
 
@@ -50,13 +50,15 @@ public class Robo : MonoBehaviour
 		Debug.Log($"Здоровье: {_health} (-{damage})");
 	}
 
-	public void SetResapwnPosition()
+	public void ChangeResapwnPosition()
 	{
-		_respawnPosition = transform.position;
+		respawnPosition = transform.position;
 	}
 
-	public Vector3 GetRespawnPosition()
+	public void RespawnPlayerAfterDeath()
 	{
-		return _respawnPosition;
+		transform.localPosition = respawnPosition;
+
+		_deathEvent.Invoke();
 	}
 }

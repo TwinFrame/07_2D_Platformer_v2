@@ -16,7 +16,7 @@ public class CheckPointReached : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!_checkPointFlag.GetIsReached() && collision.TryGetComponent<Robo>(out Robo robo))
+        if (!_checkPointFlag.isReached && collision.TryGetComponent<Robo>(out Robo robo))
         {
             _checkPointIsReached.Invoke();
         }
