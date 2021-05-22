@@ -12,31 +12,32 @@ public class Robo : MonoBehaviour
 	[SerializeField] private int _fullHealth;
 	[SerializeField] private UnityEvent _deathEvent;
 
+	public int health { get; private set; }
+	public int wallet { get; private set; }
+
 	private Vector3 respawnPosition;
-	private int _health;
-	private int _wallet;
 
 	private void OnEnable()
 	{
-		_health = _fullHealth;
+		health = _fullHealth;
 
 		respawnPosition = transform.localPosition;
 	}
 
 	public void AddCoin(int value)
 	{
-		_wallet += value;
+		wallet += value;
 
-		Debug.Log($"Кашель: {_wallet} (+{value})");
+		Debug.Log($"Кашель: {wallet} (+{value})");
 	}
 
 	public void TakeDamage(int damage)
 	{
-		_health -= damage;
+		health -= damage;
 
-		if (_health <= 0)
+		if (health <= 0)
 		{
-			_health = _fullHealth;
+			health = _fullHealth;
 
 			transform.localPosition = respawnPosition;
 
@@ -47,7 +48,7 @@ public class Robo : MonoBehaviour
 			return;
 		}
 
-		Debug.Log($"Здоровье: {_health} (-{damage})");
+		Debug.Log($"Здоровье: {health} (-{damage})");
 	}
 
 	public void ChangeResapwnPosition()
