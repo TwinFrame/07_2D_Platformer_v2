@@ -130,8 +130,8 @@ MonoBehaviour:
   - {fileID: 5472697697231910464}
   - {fileID: 1000812833473157007}
   m_Bounds:
-    m_Center: {x: 0.005477965, y: 0.0073406696, z: 0}
-    m_Extent: {x: 0.50399166, y: 1.0509155, z: 0}
+    m_Center: {x: 0.0054779053, y: 0.0073406696, z: 0}
+    m_Extent: {x: 0.5039917, y: 1.0509155, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &1162379612949292978
@@ -267,8 +267,8 @@ MonoBehaviour:
   - {fileID: 8454671647181594598}
   - {fileID: 2963098835366656774}
   m_Bounds:
-    m_Center: {x: 0.0055762827, y: 0.0044976473, z: 0}
-    m_Extent: {x: 0.48858806, y: 1.013772, z: 0}
+    m_Center: {x: 0.005576223, y: 0.004497409, z: 0}
+    m_Extent: {x: 0.4885881, y: 1.013772, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &2851247158882984156
@@ -494,8 +494,8 @@ MonoBehaviour:
   - {fileID: 8139650944132762515}
   - {fileID: 5580908524336297843}
   m_Bounds:
-    m_Center: {x: 0.028661609, y: 0.00001770258, z: 0}
-    m_Extent: {x: 0.34140086, y: 0.99636984, z: 0}
+    m_Center: {x: 0.02866146, y: 0.000017821789, z: 0}
+    m_Extent: {x: 0.34140083, y: 0.99636996, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &3869572266051765153
@@ -544,6 +544,7 @@ Transform:
   - {fileID: 4210819427088848596}
   - {fileID: 1428182624641419120}
   - {fileID: 1897399526529795186}
+  - {fileID: 857659745287201375}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -663,7 +664,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4837055561956214656}
+      - m_Target: {fileID: 328327016254152224}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: PlayOneShot
         m_Mode: 2
@@ -930,6 +931,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b97f5803dd4fe44834aaf8c9a45358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collectedCoinEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &377614611180638203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -957,7 +961,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4837055561956214656}
+      - m_Target: {fileID: 328327016254152224}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: PlayOneShot
         m_Mode: 2
@@ -1141,6 +1145,133 @@ Transform:
   m_Father: {fileID: 8775554267075451671}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 92.327}
+--- !u!1 &5146136894241603213
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 857659745287201375}
+  - component: {fileID: 328327016254152224}
+  m_Layer: 0
+  m_Name: AudioSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &857659745287201375
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5146136894241603213}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.8712967, y: 4.711547, z: -0.25410002}
+  m_LocalScale: {x: 2.9809873, y: 2.9809873, z: 2.9809873}
+  m_Children: []
+  m_Father: {fileID: 8775554267075451671}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &328327016254152224
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5146136894241603213}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5469553952125753651
 GameObject:
   m_ObjectHideFlags: 0
@@ -1273,8 +1404,8 @@ MonoBehaviour:
   - {fileID: 9168302144742496857}
   - {fileID: 1349988418337758440}
   m_Bounds:
-    m_Center: {x: -0.5295526, y: 0.0019097924, z: 0}
-    m_Extent: {x: 0.33538613, y: 0.9846143, z: 0}
+    m_Center: {x: -0.5295527, y: 0.0019100308, z: 0}
+    m_Extent: {x: 0.33538613, y: 0.98461443, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!1 &6474077335713871724
