@@ -27,8 +27,6 @@ public class Robo : MonoBehaviour
 	public void AddCoin(int value)
 	{
 		wallet += value;
-
-		Debug.Log($"Кашель: {wallet} (+{value})");
 	}
 
 	public void TakeDamage(int damage)
@@ -47,8 +45,6 @@ public class Robo : MonoBehaviour
 
 			return;
 		}
-
-		Debug.Log($"Здоровье: {health} (-{damage})");
 	}
 
 	public void ChangeResapwnPosition()

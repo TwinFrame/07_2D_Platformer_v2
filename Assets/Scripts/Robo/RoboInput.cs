@@ -20,32 +20,27 @@ public class RoboInput : MonoBehaviour
 	{
 		if (!Input.anyKey || Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow))
 		{
-			_idle.Invoke();
-
-			if (_countingTimeToRun != null)
-				StopCoroutine(CountingTimeToRun());
+			GoToIdle();
 		}
 
-		if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
+		if (Input.GetKeyDown(KeyCode.RightArrow))
 		{
-			_countingTimeToRun = StartCoroutine(CountingTimeToRun());
+			GoToRight();
+		}
 
-			if (Input.GetKey(KeyCode.RightArrow))
-				_isRightDirection = true;
-			else if (Input.GetKey(KeyCode.LeftArrow))
-				_isRightDirection = false;
-
-			_walk.Invoke(_isRightDirection);
+		if (Input.GetKeyDown(KeyCode.LeftArrow))
+		{
+			GoToLeft();
 		}
 
 		if (Input.GetKeyDown(KeyCode.UpArrow))
 		{
-			_jump.Invoke();
+			GoToJump();
 		}
 
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
-			_hit.Invoke();
+			GoToHit();
 		}
 	}
 
@@ -61,6 +56,42 @@ public class RoboInput : MonoBehaviour
 		}
 
 		_run.Invoke();
+	}
+
+	public void GoToIdle()
+	{
+		_idle.Invoke();
+
+		if (_countingTimeToRun != null)
+			StopCoroutine(CountingTimeToRun());
+	}
+
+	public void GoToRight()
+	{
+		_countingTimeToRun = StartCoroutine(CountingTimeToRun());
+
+		_isRightDirection = true;
+
+		_walk.Invoke(_isRightDirection);
+	}
+
+	public void GoToLeft()
+	{
+		_countingTimeToRun = StartCoroutine(CountingTimeToRun());
+
+		_isRightDirection = false;
+
+		_walk.Invoke(_isRightDirection);
+	}
+
+	public void GoToJump()
+	{
+		_jump.Invoke();
+	}
+
+	public void GoToHit()
+	{
+		_hit.Invoke();
 	}
 
 	[System.Serializable]
